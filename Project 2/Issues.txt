@@ -1,0 +1,6 @@
+Issues Solved
+1.on wrong input menu enter infinite loops 
+1.display word not found option
+3.delete count is getting decreased even if word is not in the dictionary
+4.Display meesage if word is not in the dictionary
+5.Display mesaage after word is getting deleted
