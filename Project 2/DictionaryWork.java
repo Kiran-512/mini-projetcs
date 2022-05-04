@@ -35,20 +35,24 @@ public void insertWord(String word, String meaning){
 	Node par=null;
 	System.out.println("1");
 	while(p!=null){
-	//		System.out.println("2");
+			//System.out.println("2");
 		par=p;
 		if(word.compareToIgnoreCase(p.word)>0)
-		{p=p.right;
-	//	System.out.println("3");}
+		{
+			p=p.right;
+		//System.out.println("3");
+		}
 		else if(word.compareToIgnoreCase(p.word)<0)
-		{p=p.left;
-	//	System.out.println("4");}
+		{
+			p=p.left;
+		//System.out.println("4");
+		}
 		else{
 			System.out.println(word + " Word is already present");
 			return;
 			}
 	}
-	//	System.out.println("5");
+		//System.out.println("5");
 	Node temp = new Node(word,meaning);
 	
 	if(par==null)
@@ -82,7 +86,7 @@ public void insertWord(String word, String meaning){
 	void display(){
 		
 		if(wordcount()==0){
-		System.out.println("\n You can add by using Insert words option \n");			
+		System.out.println(" You can add by using Insert words option \n");			
 		System.out.println("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n");
 		return;
 		}
@@ -120,8 +124,10 @@ public void deleteWord(String word){
 	while(p!=null){
 		
 		if(word.compareToIgnoreCase(p.word)==0)
-		{//System.out.println("4");
-		break;}
+		{
+		//System.out.println("4");
+		break;
+		}
 	
 		par=p;
 		if(word.compareToIgnoreCase(p.word)<0)
@@ -165,16 +171,16 @@ public void deleteWord(String word){
 			System.out.println(p.word + " Word deleted successfully!");
 			root=ch;
 			count--;
-		//	System.out.println("1");
+			//System.out.println("1");
 		}
 		else if(p==par.left)
 			{
-			System.out.println(p.word + " Word deleted successfully!");	
+			System.out.println(par.word + " Word deleted successfully!");	
 			par.left=ch;
 			count--;
 			}
 		else{
-			System.out.println(p.word + " Word deleted successfully!");
+			System.out.println(par.word + " Word deleted successfully!");
 			par.right=ch;
 			count--;
 			//System.out.println("3");
