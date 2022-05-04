@@ -169,12 +169,12 @@ public void deleteWord(String word){
 		}
 		else if(p==par.left)
 			{
-			System.out.println(p.word + " Word deleted successfully!");	
+			System.out.println(par.word + " Word deleted successfully!");	
 			par.left=ch;
 			count--;
 			}
 		else{
-			System.out.println(p.word + " Word deleted successfully!");
+			System.out.println(par.word + " Word deleted successfully!");
 			par.right=ch;
 			count--;
 			//System.out.println("3");
