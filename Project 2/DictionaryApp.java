@@ -15,12 +15,11 @@ class DictionaryApp {
       System.out.println(
         "*--------------------------------------*\n*  Please enter the choice:            *\n*  1.View all Dictionary               *\n*  2.Insert new word                   *\n*  3.Search word                       *\n*  4.Delete the word                   *\n*  5.Total words in the dictionary     *\n*  0.To exit the app                   *\n*--------------------------------------*"
       );
-
+	  
       try {
         //scanner class object
         Scanner sc = new Scanner(System.in);
-        choice = sc.nextInt(); //throw Inputmismatch
-        sc.close();
+        choice = sc.nextInt(); //throw Inputmismatch      
         switch (choice) {
           case 1:
             dictionary.display();
@@ -67,7 +66,6 @@ class DictionaryApp {
             System.out.println("Invalid Input");
             break;
         }
-        sc.close();
       } catch (Exception e) {
         System.out.println("Invalid Input!");
       }

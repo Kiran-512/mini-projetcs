@@ -4,14 +4,13 @@ public class DictionaryWork {
 
   Node root;
   static int count = 0;
-  int flag = 0;
 
   Scanner sc = new Scanner(System.in);
 
-  //============================= Note creation======================
+  //============================= Note creation ======================
 
-  static class Node {
-
+  static class Node{
+	  
     String word;
     String meaning;
     Node left;
@@ -34,8 +33,9 @@ public class DictionaryWork {
   public void insertWord(String word, String meaning) {
     Node p = root;
     Node par = null;
+		
     // System.out.println("1");
-    while (p != null) {
+    while (p!= null) {
       //System.out.println("2");
       par = p;
       if (word.compareToIgnoreCase(p.word) > 0) {
@@ -49,12 +49,17 @@ public class DictionaryWork {
         return;
       }
     }
+	
     //System.out.println("5");
-    Node temp = new Node(word, meaning);
 
-    if (par == null) root = temp; else if (
-      word.compareToIgnoreCase(par.word) < 0
-    ) par.left = temp; else par.right = temp;
+	Node temp = new Node(word, meaning);
+
+    if (par==null) 
+		root=temp; 
+	else if (word.compareToIgnoreCase(par.word) < 0) 
+		par.left=temp; 
+	else 
+		par.right=temp;
   }
 
   //==============================Word count===========================
@@ -68,15 +73,18 @@ public class DictionaryWork {
 
   //======================= Inorder traversal ===================================
   public void inorder(Node trav) {
-    if (trav == null) {
+    
+	if (trav == null) {
       return;
     }
+	
     inorder(trav.left);
     System.out.println(trav.word + " : " + trav.meaning);
     System.out.println();
     inorder(trav.right);
+  
   }
-
+  
   //==============================Display the word===========================
   void display() {
     if (wordcount() == 0) {
@@ -106,19 +114,20 @@ public class DictionaryWork {
     }
     return false;
   }
+  
+//============= Delete the word ========================
 
-  //============= Delete the word ========================
+public void deleteWord(String word) {
 
-  public void deleteWord(String word) {
     Node p = root;
     Node par = null;
-
+	
     while (p != null) {
       if (word.compareToIgnoreCase(p.word) == 0) {
         //System.out.println("4");
         break;
       }
-
+	  
       par = p;
       if (word.compareToIgnoreCase(p.word) < 0) p = p.left; else p = p.right;
     } //we found the node to be deleted with pointer p and par as parent of p
@@ -144,7 +153,7 @@ public class DictionaryWork {
       par = sp;
     }
 
-    //		case 1 : to delet only node and case 2 : to delete either node
+	//case 1 : to delet only node and case 2 : to delete either node
 
     Node ch;
     if (p.left != null) ch = p.left; else ch = p.right;
